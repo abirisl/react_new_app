@@ -4,7 +4,7 @@ import Banner from '../components/Home/Banner';
 import Products from '../components/Home/Products';
 
 
-const home = () => {
+const Home = () => {
     return (
         <div>
            <Banner/>
@@ -14,4 +14,4 @@ const home = () => {
     );
 };
 
-export default home;
+export default Home;

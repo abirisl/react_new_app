@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
@@ -18,6 +19,8 @@ const Navbar = () => {
         </div>
       </div>
       <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+      <li><Link to='/about'>About Us</Link></li>
+      <li><Link to='/contact_us'>Contact</Link></li>
         <li>
           <a className="justify-between">
             Profile
@@ -25,7 +28,9 @@ const Navbar = () => {
           </a>
         </li>
         <li><a>Settings</a></li>
-        <li><a>Logout</a></li>
+        <li><a>SignUp</a></li>
+        <li><Link to='/login'>Login</Link></li>
+        <li><Link to='/register'>signUp</Link></li>
       </ul>
     </div>
   </div>

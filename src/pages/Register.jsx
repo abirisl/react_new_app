@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import GoogleLogIn from '../components/Login_Register/GoogleLogIn';
+import UserAuth from '../hooks/UserAuth';
 
 const Register = () => {
     const [passMatch, setPassMatch] =useState(true)
+    const {createUser,user} = UserAuth()
+
+    const navigate = useNavigate()
+    
+    const from = location?.state?.from?.pathname || "/"
+
     const handleSubmit =(e)=>{
         e.preventDefault()
         const form = e.target;
@@ -14,6 +22,12 @@ const Register = () => {
 
         if(newPassword !== confirmPassword){
             setPassMatch(false)
+        }
+        if(newPassword === confirmPassword){
+          createUser(email,newPassword)
+          if(user){
+            navigate(from)
+          }
         }
       }
     return (
@@ -44,6 +58,7 @@ const Register = () => {
             )
            }
            <button className='btn mt-5 bg-green-500'>Register</button>
+           <GoogleLogIn/>
            <p>Already have an account? <Link to='/login'>Login</Link></p>
                    </div>
         </form>

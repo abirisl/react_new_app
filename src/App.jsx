@@ -4,9 +4,9 @@ import Home from "./pages/Home"
 function App() {
   return (
     <>
-    <Navbar/>
-   <Home></Home>
-   <Footer/>
+      <Navbar />
+      <Home></Home>
+      <Footer />
     </>
   )
 }

@@ -4,7 +4,7 @@ import { IoMdMenu } from "react-icons/io";
 import { RiAccountPinBoxFill } from "react-icons/ri";
 import { IoChatboxSharp } from "react-icons/io5";
 import { IoIosSettings } from "react-icons/io";
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import UserAuth from '../hooks/UserAuth';
 
 const DrawerLayout = () => {
@@ -27,31 +27,31 @@ const DrawerLayout = () => {
                     <li>
                         <div className='flex'>
                             <div><IoMdMenu className='text-red-700' /></div>
-                            <div><a>Menu</a></div>
+                            <div><Link to="/">Menu</Link></div>
                         </div>
                     </li>
                     <li>
                         <div className='flex'>
                             <div><GoHomeFill className='text-red-700' /></div>
-                            <div><a>Dashboard</a></div>
+                            <div><Link to="">Dashboard</Link></div>
                         </div>
                     </li>
                     <li>
                         <div className='flex'>
                             <div><RiAccountPinBoxFill className='text-red-700' /></div>
-                            <div><a>Account</a></div>
+                            <div><Link to="">Account</Link></div>
                         </div>
                     </li>
                     <li>
                         <div className='flex'>
                             <div><IoChatboxSharp className='text-red-700' /></div>
-                            <div><a>Chat</a></div>
+                            <div><Link to="">Chat</Link></div>
                         </div>
                     </li>
                     <li>
                         <div className='flex'>
                             <div><IoIosSettings className='text-red-700' /></div>
-                            <div><a>Settings</a></div>
+                            <div><Link to="">Settings</Link></div>
                         </div>
                     </li>
                     <li>

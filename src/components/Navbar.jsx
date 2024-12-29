@@ -93,45 +93,57 @@ const Navbar = () => {
     }
   </>
 
+
   return (
     <div className='shadow-md dark:bg-gray-900 dark:text-white relative z-40'>
       {/* upper navbar */}
       <div className='bg-primary/40 py-2'>
-        <div className='container flex justify-between items-center'>
-          <div>
-            <a href="#" className='font-bold text-2xl sm:text-3xl flex gap-2'>
-              <img src={logo} alt="" className='w-10 uppercase' />
-              Shopsy
-            </a>
-          </div>
-          {/* search bar */}
-          <div className='flex justify-between item-center gap-4'>
-            <div className='relative group hidden sm:block'>
-              <input type="text" placeholder='search' className='w-[200px] sm:w-[200px] group-hover:w-[300px] transition-all duration-300 rounded-full border border-gray-300 px-2 py-1 focus:outline-none focus:border-1 focus:border-primary dark:border-gray-500 dark:bg-gray-800' />
-              <IoMdSearch className='text-gray-500 group-hover:text-primary absolute top-1/2 -translate-y-1/2 right-3' />
-            </div>
-          </div>
-          {/* order button */}
-          <button className='bg-gradient-to-r from-primary to-secondary transition-all duration-200 text-white px-4 py-1 rounded-full flex item-center gap-3 group'>
-            <span className='group-hover:block hidden transition-all duration-200'>order</span>
-            <FaCartShopping className='text-xl text-white drop-shadow-sm cursor-pointer' />
-          </button>
-          {/* DarkMode Button */}
-          <div>
-            <DarkMode />
-          </div>
-          <div className='group relative cursor-pointer'>
-            <div className="w-10">
-              <img src={user?.photoURL || "/public/vite.svg"} className="rounded-full" />
-            </div>
-            <div className='absolute z-[9999] hidden group-hover:block rounded-md bg-white text-black shadow-md'>
-              <ul>
-                {ProfileDrop}
-              </ul>
-            </div>
-          </div>
-        </div>
+  <div className='container flex justify-between items-center'>
+    
+    {/* Logo */}
+    <div>
+      <a href="#" className='font-bold text-2xl sm:text-3xl flex gap-2'>
+        <img src={logo} alt="" className='w-10 uppercase' />
+        Shopsy
+      </a>
+    </div>
+    
+    {/* Search Bar (Fixed Position and Expand on Click) */}
+    <div className='flex item-center gap-4'>
+      <div className='relative hidden md:block'>
+        <input 
+          type="text" 
+          placeholder='search' 
+          className='w-[200px] sm:w-[200px] focus:w-[300px] transition-all duration-300 rounded-full border border-gray-300 px-2 py-1 focus:outline-none focus:border-1 focus:border-primary dark:border-gray-500 dark:bg-gray-800 fixed top-2 transform -translate-x-1/2' 
+        />
+        <IoMdSearch className='text-gray-500  group-hover:text-primary absolute top-1/2 -translate-y-1/2 left-14' />
       </div>
+    </div>
+    
+    {/* Order Button */}
+    <button className='bg-gradient-to-r from-primary to-secondary transition-all duration-200 text-white px-4 py-1 rounded-full flex items-center gap-3 group'>
+      <FaCartShopping className='text-xl text-white drop-shadow-sm cursor-pointer' />
+    </button>
+    
+    {/* Dark Mode Button */}
+    <div>
+      <DarkMode />
+    </div>
+    
+    {/* Profile User Image and Dropdown */}
+    <div className='group relative mr-4'>
+      <div className="w-10">
+        <img src={user?.photoURL || "/public/vite.svg"} className="rounded-full" />
+      </div>
+      <div className='absolute z-[9999] w-[120px] hidden group-hover:block rounded-md bg-white text-black shadow-md right-0'>
+        <ul>
+          {ProfileDrop}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
       {/* lower navbar */}
       <div className='flex justify-center'>
         <ul className='sm:flex hidden item-center gap-4'>
